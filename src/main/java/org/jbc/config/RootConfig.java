@@ -13,14 +13,14 @@ import org.jbc.config.RootConfig.WebPackage;
 
 @Configuration
 @Import(DataConfig.class)
-@ComponentScan(basePackages={"spittr"}, 
+@ComponentScan(basePackages={"org.jbc"},
     excludeFilters={
         @Filter(type=FilterType.CUSTOM, value=RootConfig.WebPackage.class)
     })
 public class RootConfig {
   public static class WebPackage extends RegexPatternTypeFilter {
     public WebPackage() {
-      super(Pattern.compile("spittr\\.web"));
+      super(Pattern.compile("\\.web"));
     }    
   }
 }
